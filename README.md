@@ -53,6 +53,11 @@ yarn deploy
 
 This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
 
+To deploy the test contract on Allfeat Network:
+```
+yarn deploy --network allfeat
+```
+
 4. On a third terminal, start your NextJS app:
 
 ```
