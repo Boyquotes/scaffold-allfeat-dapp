@@ -46,6 +46,10 @@ const config: HardhatUserConfig = {
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
     },
+    allfeat: {
+      url: `https://harmonie-endpoint-02.allfeat.io`,
+      accounts: [deployerPrivateKey],
+    },
     mainnet: {
       url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
