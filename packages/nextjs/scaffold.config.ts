@@ -1,3 +1,4 @@
+import { defineChain } from "viem";
 import * as chains from "viem/chains";
 
 export type ScaffoldConfig = {
@@ -8,9 +9,35 @@ export type ScaffoldConfig = {
   onlyLocalBurnerWallet: boolean;
 };
 
+export const allfeat = defineChain({
+  id: 441,
+  name: "Allfeat",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Harmony",
+    symbol: "HMY",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://harmonie-endpoint-02.allfeat.io"],
+      webSocket: ["wss://harmonie-endpoint-02.allfeat.io"],
+    },
+  },
+  blockExplorers: {
+    default: { name: "Explorer", url: "https://evm.allfeat.com" },
+  },
+  contracts: {
+    YourContract: {
+      address: "0x1Ec5E900e2d79674Fe97C794cbD0d07369545dcf",
+      blockCreated: 1347696,
+    },
+  },
+});
+
 const scaffoldConfig = {
   // The networks on which your DApp is live
-  targetNetworks: [chains.hardhat],
+  //  targetNetworks: [chains.hardhat],
+  targetNetworks: [allfeat],
 
   // The interval at which your front-end polls the RPC servers for new data
   // it has no effect if you only target the local network (default is 4000)
